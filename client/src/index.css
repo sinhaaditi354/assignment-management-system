@@ -1,0 +1,294 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  /* Premium Glassmorphism Design System */
+  .glass {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+  }
+
+  .dark .glass {
+    background: rgba(15, 23, 42, 0.4);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  /* Glass Card with Shiny Reflector Sheen */
+  .glass-card {
+    position: relative;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.22);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.05);
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), 
+                box-shadow 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+                border-color 0.5s ease,
+                background-color 0.5s ease;
+  }
+
+  .dark .glass-card {
+    position: relative;
+    overflow: hidden;
+    background: rgba(15, 23, 42, 0.35);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), 
+                box-shadow 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+                border-color 0.5s ease,
+                background-color 0.5s ease;
+  }
+
+  /* Shiny reflector sheen light sweep effect */
+  .glass-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -150%;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.02) 25%,
+      rgba(255, 255, 255, 0.22) 50%,
+      rgba(255, 255, 255, 0.02) 75%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    transform: skewX(-25deg);
+    transition: left 0.75s ease-in-out;
+    pointer-events: none;
+  }
+
+  .glass-card:hover::after {
+    left: 150%;
+  }
+  
+  /* Glass Card Hover Lift and Glow Effects */
+  .glass-card-hover {
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), 
+                box-shadow 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+                border-color 0.5s ease,
+                background-color 0.5s ease;
+  }
+
+  .glass-card-hover:hover {
+    transform: translateY(-6px) scale(1.02);
+    background: rgba(255, 255, 255, 0.35);
+    border-color: rgba(255, 255, 255, 0.55);
+    box-shadow: 0 20px 40px rgba(99, 102, 241, 0.16),
+                0 0 15px rgba(255, 255, 255, 0.1);
+  }
+
+  .dark .glass-card-hover:hover {
+    transform: translateY(-6px) scale(1.02);
+    background: rgba(15, 23, 42, 0.45);
+    border-color: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 20px 40px rgba(139, 92, 246, 0.25),
+                0 0 15px rgba(139, 92, 246, 0.08);
+  }
+  
+  .glass-input {
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    transition: all 0.3s ease;
+  }
+
+  .glass-input:focus {
+    background: rgba(255, 255, 255, 0.25);
+    border-color: rgba(99, 102, 241, 0.45);
+    box-shadow: 0 0 15px rgba(99, 102, 241, 0.15);
+  }
+  
+  .dark .glass-input {
+    background: rgba(15, 23, 42, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    transition: all 0.3s ease;
+  }
+
+  .dark .glass-input:focus {
+    background: rgba(15, 23, 42, 0.35);
+    border-color: rgba(139, 92, 246, 0.4);
+    box-shadow: 0 0 15px rgba(139, 92, 246, 0.15);
+  }
+
+  /* Premium SaaS Background Gradients (Subtle Movement + Cyber Grid) */
+  .premium-bg {
+    background-color: #f1f5f9;
+    background-image: 
+      linear-gradient(rgba(100, 116, 139, 0.07) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(100, 116, 139, 0.07) 1px, transparent 1px),
+      radial-gradient(circle at 10% 20%, rgba(99, 102, 241, 0.12) 0%, transparent 45%),
+      radial-gradient(circle at 90% 80%, rgba(59, 130, 246, 0.1) 0%, transparent 45%),
+      radial-gradient(circle at 50% 50%, rgba(236, 72, 153, 0.08) 0%, transparent 50%);
+    background-size: 50px 50px, 50px 50px, 140% 140%, 140% 140%, 140% 140%;
+    animation: premium-gradient-move 35s ease infinite;
+    transition: background-color 0.5s ease;
+  }
+
+  .dark .premium-bg {
+    background-color: #050811;
+    background-image: 
+      linear-gradient(rgba(148, 163, 184, 0.045) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(148, 163, 184, 0.045) 1px, transparent 1px),
+      radial-gradient(circle at 10% 20%, rgba(99, 102, 241, 0.28) 0%, transparent 45%),
+      radial-gradient(circle at 90% 80%, rgba(139, 92, 246, 0.22) 0%, transparent 45%),
+      radial-gradient(circle at 50% 50%, rgba(59, 130, 246, 0.2) 0%, transparent 50%);
+    background-size: 55px 55px, 55px 55px, 140% 140%, 140% 140%, 140% 140%;
+    animation: premium-gradient-move 35s ease infinite;
+  }
+
+  /* Subtle floating mesh gradient background for login/signup */
+  .animate-blue-purple-bg {
+    background-color: #030712;
+    background-image: 
+      linear-gradient(rgba(148, 163, 184, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(148, 163, 184, 0.03) 1px, transparent 1px),
+      radial-gradient(circle at 50% 50%, #0d1527 0%, #030712 100%);
+    background-size: 60px 60px, 60px 60px, 100% 100%;
+  }
+
+  /* Micro Button Glow hover animations */
+  .btn-glow {
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .btn-glow:hover {
+    box-shadow: 0 0 25px 4px rgba(99, 102, 241, 0.45);
+    transform: translateY(-2px) scale(1.015);
+  }
+
+  .btn-glow-danger {
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .btn-glow-danger:hover {
+    box-shadow: 0 0 22px 3px rgba(239, 68, 68, 0.35);
+    transform: translateY(-2px) scale(1.015);
+  }
+
+  /* Page Load Slide-up Fade Animation */
+  .animate-fade-in {
+    animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  /* Floating mesh elements */
+  .animate-float-1 {
+    animation: float1 30s ease-in-out infinite;
+  }
+
+  .animate-float-2 {
+    animation: float2 36s ease-in-out infinite;
+  }
+
+  .animate-float-3 {
+    animation: float3 44s ease-in-out infinite;
+  }
+
+  .animate-float-4 {
+    animation: float4 52s ease-in-out infinite;
+  }
+}
+
+@keyframes premium-gradient-move {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float1 {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(60px, -80px) scale(1.15);
+  }
+}
+
+@keyframes float2 {
+  0%, 100% {
+    transform: translate(0, 0) scale(1.1);
+  }
+  50% {
+    transform: translate(-70px, 60px) scale(0.9);
+  }
+}
+
+@keyframes float3 {
+  0%, 100% {
+    transform: translate(0, 0) scale(0.95);
+  }
+  50% {
+    transform: translate(-50px, -60px) scale(1.1);
+  }
+}
+
+@keyframes float4 {
+  0%, 100% {
+    transform: translate(0, 0) scale(1.05);
+  }
+  50% {
+    transform: translate(50px, 45px) scale(0.95);
+  }
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(156, 163, 175, 0.3);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(156, 163, 175, 0.5);
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+/* Glass panel glow effects */
+.glow-blue {
+  box-shadow: 0 0 40px rgba(59, 130, 246, 0.08);
+}
+.glow-purple {
+  box-shadow: 0 0 40px rgba(139, 92, 246, 0.08);
+}
