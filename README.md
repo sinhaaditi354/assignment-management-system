@@ -1,5 +1,9 @@
 # AssignmentHub - Assignment Management System
 
+🌐 **Live Demo:** https://assignment-management-system-five.vercel.app  
+🖥️ **Backend API:** https://assignment-management-system-gbkg.onrender.com  
+📂 **GitHub Repository:** https://github.com/sinhaaditi354/assignment-management-system
+
 A complete, production-ready, full-stack Assignment Management System built with React, Node.js, Express, MongoDB, and Socket.IO. Designed as an interactive, real-time platform for instructors (Admins) to publish learning materials and students to view, preview, and download assignments instantly.
 
 ---
@@ -47,6 +51,14 @@ A complete, production-ready, full-stack Assignment Management System built with
 
 
 ---
+
+## 🚀 Try the Live Application
+
+👉 Open Application:  
+https://assignment-management-system-five.vercel.app
+
+✔ Admin can login and create assignments  
+✔ Student can view real-time updates instantly  
 
 ## 📁 Database Schema (MongoDB / Mongoose)
 
@@ -157,12 +169,13 @@ To test the real-time functionality of the system:
 
 ## ☁️ Deployment Guide
 
-### Deploying Backend (Express + Node)
-1. **Hosting Providers**: Can be hosted easily on Render, Heroku, or AWS Elastic Beanstalk.
-2. **Database**: Use [MongoDB Atlas](https://www.mongodb.com/cloud/atlas) for a cloud-hosted MongoDB cluster.
-3. **Environment Setup**: Update `MONGODB_URI` and `JWT_SECRET` in the host's config settings. Update `CLIENT_URL` to point to your live frontend address.
+### Frontend Deployment (Vercel)
+- Hosted on: https://vercel.com  
+- Live URL: https://assignment-management-system-five.vercel.app  
 
-### Deploying Frontend (Vite + React)
-1. **Build the assets**: Run `npm run build` inside the client folder. This compiles the static build to `client/dist/`.
-2. **Hosting Providers**: The compiled static assets inside the `dist` folder can be hosted for free on platforms like Vercel, Netlify, or GitHub Pages.
-3. **Configuration**: Ensure the base API URL inside `client/src/utils/api.js` points to your deployed backend domain.
+### Backend Deployment (Render)
+- Hosted on: https://render.com  
+- API URL: https://assignment-management-system-gbkg.onrender.com  
+
+### Database
+- MongoDB Atlas cloud database
