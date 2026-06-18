@@ -96,6 +96,7 @@ CLIENT_URL=http://localhost:5173
 ### Prerequisites
 - [Node.js](https://nodejs.org/) (v16+ recommended)
 - [MongoDB](https://www.mongodb.com/try/download/community) installed and running locally on port 27017.
+- Make sure MongoDB is running OR MongoDB Atlas connection is configured.
 
 ### Step 1: Clone and Enter the Project
 ```bash
