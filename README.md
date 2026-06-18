@@ -22,6 +22,7 @@ A complete, production-ready, full-stack Assignment Management System built with
 - **Activity Feed**: Instant logging of newly uploaded assignments.
 <img width="1917" height="475" alt="image" src="https://github.com/user-attachments/assets/c937024b-ec0f-438b-920b-f13c9ddef7d5" />
 
+<img width="1918" height="962" alt="image" src="https://github.com/user-attachments/assets/7faeead3-d318-47ad-a814-38a18fd9ecd9" />
 
 ### Student Dashboard
 - **Instant Synchronization**: Real-time push updates via **Socket.IO**. When an admin publishes an assignment, students receive:
@@ -32,11 +33,16 @@ A complete, production-ready, full-stack Assignment Management System built with
 - **Search & Filter Control**: Instant fuzzy search across title, description, and tags, coupled with category filtering buttons.
 - **Inline Previewer**: Native preview modals for PDF and Image types, and beautiful download fallbacks for Word (`.docx`) documents.
 - **"NEW" Badges**: Glowing indicator badges highlighting files uploaded within the last 24 hours.
+<img width="1918" height="967" alt="image" src="https://github.com/user-attachments/assets/ed82b326-502b-423c-a252-18b75a47fece" />
+
 
 ### Visual Design
 - **Responsive Layout**: Designed for mobile, tablet, and desktop interfaces.
 - **Glassmorphic Theme**: Sophisticated glass cards over a moving animated blue/purple gradient background.
 - **Dark/Light Modes**: Complete system theme toggle with immediate storage persistence.
+<img width="1918" height="965" alt="image" src="https://github.com/user-attachments/assets/abe99428-4f21-4f91-9ebd-c3bc8382bc7a" />
+![Uploading image.png…]()
+
 
 ---
 
