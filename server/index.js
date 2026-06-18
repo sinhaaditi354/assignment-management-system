@@ -16,12 +16,24 @@ const app = express();
 const server = http.createServer(app);
 
 // Configure CORS
+const allowedOrigins = [
+  'http://localhost:5173',
+  'https://assignment-management-system-five.vercel.app'
+];
+
 const corsOptions = {
-  origin: process.env.CLIENT_URL || 'http://localhost:5173',
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
   credentials: true,
 };
-app.use(cors(corsOptions));
 
+app.use(cors(corsOptions));
+app.options('*', cors());
 // Body Parser Middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -41,7 +53,7 @@ app.get('/', (req, res) => {
 // Setup Socket.IO Server
 const io = socketIo(server, {
   cors: {
-    origin: process.env.CLIENT_URL || 'http://localhost:5173',
+    origin: allowedOrigins,
     methods: ['GET', 'POST'],
     credentials: true,
   },
