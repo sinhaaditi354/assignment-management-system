@@ -83,6 +83,8 @@ Create a `.env` file inside the `server/` directory:
 ```env
 PORT=5000
 MONGODB_URI=mongodb://127.0.0.1:27017/assignment_db
+# OR
+MONGODB_URI=mongodb+srv://<username>:<password>@cluster.mongodb.net/assignment_db
 JWT_SECRET=supersecretkey_assignment_system_2026_safe
 CLIENT_URL=http://localhost:5173
 ```
