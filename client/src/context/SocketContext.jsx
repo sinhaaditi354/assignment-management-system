@@ -11,7 +11,7 @@ export const SocketProvider = ({ children }) => {
   useEffect(() => {
     if (user && user.token) {
       // Create new socket connection with authentication token support if needed
-      const socketUrl = 'http://localhost:5000';
+      const socketUrl = 'https://assignment-management-system-gbkg.onrender.com';
       const newSocket = io(socketUrl, {
         withCredentials: true,
         transports: ['websocket', 'polling'],

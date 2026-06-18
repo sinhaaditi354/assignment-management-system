@@ -1,4 +1,4 @@
-const apiURL = 'http://localhost:5000/api';
+const apiURL = 'https://assignment-management-system-gbkg.onrender.com/api';
 import axios from 'axios';
 
 const api = axios.create({

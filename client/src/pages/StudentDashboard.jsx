@@ -5,9 +5,9 @@ import Navbar from '../components/Navbar';
 import ActivityFeed from '../components/ActivityFeed';
 import FilePreviewModal from '../components/FilePreviewModal';
 import api from '../utils/api';
-import { 
-  Search, Download, Eye, Calendar, Tag, FileType, 
-  Sparkles, CheckCircle2 
+import {
+  Search, Download, Eye, Calendar, Tag, FileType,
+  Sparkles, CheckCircle2
 } from 'lucide-react';
 import toast from 'react-hot-toast';
 
@@ -17,7 +17,7 @@ const StudentDashboard = () => {
   const [assignments, setAssignments] = useState([]);
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('All');
-  
+
   // Preview Modal States
   const [previewOpen, setPreviewOpen] = useState(false);
   const [previewFile, setPreviewFile] = useState({ url: '', type: '', title: '' });
@@ -49,9 +49,8 @@ const StudentDashboard = () => {
 
         // Trigger real-time toast
         toast.custom((t) => (
-          <div className={`${
-            t.visible ? 'animate-enter' : 'animate-leave'
-          } max-w-md w-full bg-white dark:bg-slate-800 shadow-2xl rounded-2xl pointer-events-auto flex ring-1 ring-black/5 dark:ring-white/10 glass-card p-4 gap-3 border-l-4 border-blue-500`}>
+          <div className={`${t.visible ? 'animate-enter' : 'animate-leave'
+            } max-w-md w-full bg-white dark:bg-slate-800 shadow-2xl rounded-2xl pointer-events-auto flex ring-1 ring-black/5 dark:ring-white/10 glass-card p-4 gap-3 border-l-4 border-blue-500`}>
             <div className="flex-1">
               <p className="text-sm font-bold text-slate-900 dark:text-white flex items-center gap-1.5">
                 <Sparkles size={16} className="text-blue-500 animate-bounce" />
@@ -106,13 +105,13 @@ const StudentDashboard = () => {
 
   // Filter logic
   const filteredAssignments = assignments.filter((assignment) => {
-    const matchesSearch = 
+    const matchesSearch =
       assignment.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
       assignment.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
       assignment.category.toLowerCase().includes(searchQuery.toLowerCase());
-      
-    const matchesCategory = 
-      selectedCategory === 'All' || 
+
+    const matchesCategory =
+      selectedCategory === 'All' ||
       assignment.category === selectedCategory;
 
     return matchesSearch && matchesCategory;
@@ -138,7 +137,7 @@ const StudentDashboard = () => {
     }
   };
 
-  const backendUrl = 'http://localhost:5000';
+  const backendUrl = 'https://assignment-management-system-gbkg.onrender.com';
 
   return (
     <div className="min-h-screen premium-bg transition-colors duration-300 relative overflow-hidden">
@@ -151,7 +150,7 @@ const StudentDashboard = () => {
       <Navbar />
 
       <main className="max-w-7xl mx-auto px-6 py-8 animate-fade-in relative z-10">
-        
+
         {/* Banner Section */}
         <div className="mb-8 flex flex-col md:flex-row md:items-center justify-between gap-4">
           <div>
@@ -166,7 +165,7 @@ const StudentDashboard = () => {
 
         {/* Filter & Search Controls */}
         <div className="glass-card p-5 rounded-2xl mb-8 flex flex-col md:flex-row items-center justify-between gap-6 shadow-sm">
-          
+
           {/* Search bar */}
           <div className="relative w-full md:max-w-md">
             <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-400 dark:text-slate-500">
@@ -187,11 +186,10 @@ const StudentDashboard = () => {
               <button
                 key={cat}
                 onClick={() => setSelectedCategory(cat)}
-                className={`px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider transition-all duration-300 border cursor-pointer ${
-                  selectedCategory === cat
+                className={`px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider transition-all duration-300 border cursor-pointer ${selectedCategory === cat
                     ? 'bg-gradient-to-r from-blue-600 to-indigo-600 border-transparent text-white shadow-[0_0_15px_rgba(99,102,241,0.35)] scale-105'
                     : 'glass text-slate-600 dark:text-slate-350 border-white/20 dark:border-slate-800/80 hover:bg-white/30 dark:hover:bg-slate-800/50 hover:scale-105 active:scale-95'
-                }`}
+                  }`}
               >
                 {cat}
               </button>
@@ -202,10 +200,10 @@ const StudentDashboard = () => {
 
         {/* Main Dashboard Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          
+
           {/* Assignment Grid */}
           <div className="lg:col-span-2">
-            
+
             {filteredAssignments.length === 0 ? (
               <div className="glass-card p-12 text-center rounded-2xl">
                 <Search size={40} className="mx-auto text-slate-300 dark:text-slate-600 mb-3" />
@@ -219,22 +217,22 @@ const StudentDashboard = () => {
             ) : (
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {filteredAssignments.map((assignment) => (
-                  <div 
+                  <div
                     key={assignment._id}
                     className="glass-card glass-card-hover p-6 rounded-2xl flex flex-col justify-between group relative overflow-hidden"
                   >
-                    
+
                     {/* Animated Glow on Card Border on Hover */}
                     <div className="absolute inset-0 border border-transparent group-hover:border-blue-500/20 rounded-2xl pointer-events-none transition-colors duration-200"></div>
 
                     {/* Top Badges & Meta */}
                     <div className="flex items-center justify-between mb-4">
-                      
+
                       {/* Left: Category Badge */}
                       <span className={`px-2.5 py-1 rounded-lg text-[10px] font-extrabold uppercase tracking-wider ${getCategoryColor(assignment.category)}`}>
                         {assignment.category}
                       </span>
-                      
+
                       {/* Right: NEW badge if uploaded within 24h */}
                       {isNewAssignment(assignment.uploadDate) && (
                         <span className="flex items-center gap-1 px-2.5 py-1 bg-gradient-to-r from-pink-500 to-rose-500 text-white text-[10px] font-black uppercase tracking-wider rounded-lg shadow-sm animate-pulse">
@@ -256,13 +254,13 @@ const StudentDashboard = () => {
 
                     {/* Bottom File Metadata & Buttons */}
                     <div className="border-t border-slate-200/55 dark:border-slate-800/55 pt-4 mt-auto">
-                      
+
                       <div className="flex items-center justify-between mb-4 text-[11px] text-slate-500 dark:text-slate-400 font-semibold">
                         <span className="flex items-center gap-1.5">
                           <Calendar size={13} />
                           {formatDate(assignment.uploadDate)}
                         </span>
-                        
+
                         {/* File Extension Type Badge */}
                         <span className={`px-2 py-0.5 rounded border text-[10px] font-bold ${getFileTypeColor(assignment.fileType)}`}>
                           {assignment.fileType}
@@ -270,7 +268,7 @@ const StudentDashboard = () => {
                       </div>
 
                       <div className="grid grid-cols-2 gap-3">
-                        
+
                         {/* View/Preview */}
                         <button
                           onClick={() => handlePreview(assignment)}
@@ -279,7 +277,7 @@ const StudentDashboard = () => {
                           <Eye size={14} />
                           Preview
                         </button>
-                        
+
                         {/* Direct Download */}
                         <a
                           href={`${backendUrl}${assignment.fileUrl}`}
@@ -298,7 +296,7 @@ const StudentDashboard = () => {
                 ))}
               </div>
             )}
-            
+
           </div>
 
           {/* Activity Feed Column */}

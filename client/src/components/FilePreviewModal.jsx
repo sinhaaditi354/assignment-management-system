@@ -16,7 +16,7 @@ const FilePreviewModal = ({ isOpen, onClose, fileUrl, fileType, title }) => {
 
   if (!isOpen) return null;
 
-  const backendUrl = 'http://localhost:5000';
+  const backendUrl = 'https://assignment-management-system-gbkg.onrender.com';
   const fullUrl = `${backendUrl}${fileUrl}`;
   const isImage = ['PNG', 'JPG', 'JPEG'].includes(fileType);
   const isPdf = fileType === 'PDF';
@@ -25,27 +25,26 @@ const FilePreviewModal = ({ isOpen, onClose, fileUrl, fileType, title }) => {
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
       {/* Backdrop */}
-      <div 
+      <div
         className="absolute inset-0 bg-slate-950/70 backdrop-blur-md transition-opacity duration-300"
         onClick={onClose}
       ></div>
 
       {/* Modal Container */}
       <div className="glass-card animate-fade-in relative w-full max-w-4xl max-h-[85vh] flex flex-col rounded-2xl overflow-hidden shadow-2xl transition-all duration-300 transform scale-100 z-10">
-        
+
         {/* Header */}
         <div className="px-6 py-4 flex items-center justify-between border-b border-slate-200/55 dark:border-slate-800/55">
           <div className="flex items-center gap-3">
-            <span className={`p-2 rounded-lg text-white font-bold text-xs uppercase ${
-              isPdf ? 'bg-rose-500 shadow-sm' : isDocx ? 'bg-blue-600 shadow-sm' : 'bg-emerald-500 shadow-sm'
-            }`}>
+            <span className={`p-2 rounded-lg text-white font-bold text-xs uppercase ${isPdf ? 'bg-rose-500 shadow-sm' : isDocx ? 'bg-blue-600 shadow-sm' : 'bg-emerald-500 shadow-sm'
+              }`}>
               {fileType}
             </span>
             <h3 className="font-extrabold text-slate-800 dark:text-slate-100 text-lg truncate max-w-[50vw]">
               {title}
             </h3>
           </div>
-          <button 
+          <button
             onClick={onClose}
             className="p-1.5 rounded-xl bg-slate-100 hover:bg-slate-250 dark:bg-slate-800/80 dark:hover:bg-slate-700 text-slate-500 dark:text-slate-400 hover:scale-105 active:scale-95 transition-all duration-350"
           >
@@ -56,17 +55,17 @@ const FilePreviewModal = ({ isOpen, onClose, fileUrl, fileType, title }) => {
         {/* Content Area */}
         <div className="flex-1 bg-slate-950/5 dark:bg-slate-950/20 p-4 md:p-6 overflow-auto flex items-center justify-center min-h-[350px]">
           {isImage && (
-            <img 
-              src={fullUrl} 
-              alt={title} 
+            <img
+              src={fullUrl}
+              alt={title}
               className="max-h-[60vh] max-w-full object-contain rounded-xl shadow-md border border-slate-200/60 dark:border-slate-850"
             />
           )}
 
           {isPdf && (
-            <iframe 
-              src={fullUrl} 
-              title={title} 
+            <iframe
+              src={fullUrl}
+              title={title}
               className="w-full h-[60vh] rounded-xl border border-slate-200 dark:border-slate-800 shadow"
             />
           )}
