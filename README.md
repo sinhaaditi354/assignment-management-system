@@ -20,6 +20,8 @@ A complete, production-ready, full-stack Assignment Management System built with
   - Microsoft Word (`.docx`) File Count
   - Image (`.png`, `.jpg`, `.jpeg`) Count
 - **Activity Feed**: Instant logging of newly uploaded assignments.
+<img width="1917" height="475" alt="image" src="https://github.com/user-attachments/assets/c937024b-ec0f-438b-920b-f13c9ddef7d5" />
+
 
 ### Student Dashboard
 - **Instant Synchronization**: Real-time push updates via **Socket.IO**. When an admin publishes an assignment, students receive:
