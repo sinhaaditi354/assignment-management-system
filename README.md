@@ -41,7 +41,9 @@ A complete, production-ready, full-stack Assignment Management System built with
 - **Glassmorphic Theme**: Sophisticated glass cards over a moving animated blue/purple gradient background.
 - **Dark/Light Modes**: Complete system theme toggle with immediate storage persistence.
 <img width="1918" height="965" alt="image" src="https://github.com/user-attachments/assets/abe99428-4f21-4f91-9ebd-c3bc8382bc7a" />
-![Uploading image.png…]()
+<img width="1915" height="970" alt="image" src="https://github.com/user-attachments/assets/9e4cfb5c-6eb2-4d0a-82b8-cdcb73706446" />
+<img width="1918" height="967" alt="image" src="https://github.com/user-attachments/assets/1d6fb85e-8662-4625-9f9b-24d49f80fab9" />
+
 
 
 ---
